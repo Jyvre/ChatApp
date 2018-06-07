@@ -1,6 +1,7 @@
 package com.android.teaching.chatapp.ViewSupport;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +32,7 @@ public class ChatAppRecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return dataSet.size();
+        return dataSet == null ? 0 : dataSet.size();
     }
+
 }

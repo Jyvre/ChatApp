@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Views.ChatActivity">
+    tools:context=".Views.ChatActivity"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/mainToolbar"
@@ -17,7 +18,6 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/mainToolbar"/>
+        android:layout_height="match_parent"/>
 
-</RelativeLayout>
+</LinearLayout>

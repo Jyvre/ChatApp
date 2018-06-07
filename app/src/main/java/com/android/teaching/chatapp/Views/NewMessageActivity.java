@@ -34,6 +34,8 @@ public class NewMessageActivity extends AppCompatActivity {
 
         toolbar = findViewById( R.id.toolbarMSG );
         toolbar.setTitle( getResources().getString( R.string.anewmessage ) );
+        toolbar.setTitleTextColor( getResources().getColor( R.color.colorPureWhite ) );
+        toolbar.setBackgroundColor( getResources().getColor( R.color.colorPrimary ) );
         setSupportActionBar( toolbar );
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled( true );
@@ -58,7 +60,8 @@ public class NewMessageActivity extends AppCompatActivity {
 
             if(hasConnectivity){
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference chatAppRef = database.getReference("messages").child( FirebaseInstanceId.getInstance().getId() );
+                String key = database.getReference("messages").push().getKey();
+                DatabaseReference chatAppRef = database.getReference("messages").child( key );
                 chatAppRef.setValue( msg );
 
                 Intent msgSendIntent = new Intent( this, ChatActivity.class );

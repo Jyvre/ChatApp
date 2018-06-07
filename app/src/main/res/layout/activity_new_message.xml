@@ -19,7 +19,7 @@
         android:id="@+id/textANM"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textColor="@color/colorMsgTag"
         android:text="@string/addNewMessage"
         android:layout_below="@+id/toolbarMSG"

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -30,14 +31,18 @@ public class ChatActivity extends AppCompatActivity {
     private RecyclerView chatAppRecyclerView;
     private ChatAppRecyclerViewAdapter chatAppRecyclerViewAdapter;
     private Toolbar toolbar;
+    private LinkedHashMap content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_chat );
 
+
+
         toolbar = findViewById( R.id.mainToolbar );
         toolbar.setTitleTextColor( getResources().getColor( R.color.colorPureWhite ) );
+        toolbar.setBackgroundColor( getResources().getColor( R.color.colorPrimary ) );
         setSupportActionBar( toolbar );
 
         chatAppRecyclerView = findViewById( R.id.recycler_view );
@@ -45,7 +50,7 @@ public class ChatActivity extends AppCompatActivity {
         RecyclerView.LayoutManager chatAppLayoutManager = new LinearLayoutManager( this );
         chatAppRecyclerView.setLayoutManager( chatAppLayoutManager );
 
-        final LinkedHashMap content = new LinkedHashMap(  );
+        content = new LinkedHashMap();
 
         ConnectivityManager myConnectivtyManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo myNetworkInfo = myConnectivtyManager.getActiveNetworkInfo();
@@ -59,11 +64,14 @@ public class ChatActivity extends AppCompatActivity {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     int i = 0;
-                    for(DataSnapshot msgSnapshot  :dataSnapshot.getChildren()){
-                        MessageModel msg = dataSnapshot.getValue(MessageModel.class);
+                    for(DataSnapshot msgSnapshot : dataSnapshot.getChildren()){
+                        MessageModel msg = dataSnapshot.child(  ).getValue(MessageModel.class);
                         content.put( i,msg );
+                        Log.d("Mensje",msg.getUsername()+msg.getText());
                         i++;
                     }
+                    chatAppRecyclerViewAdapter = new ChatAppRecyclerViewAdapter( content );
+                    chatAppRecyclerView.setAdapter( chatAppRecyclerViewAdapter );
                 }
 
                 @Override
@@ -72,8 +80,6 @@ public class ChatActivity extends AppCompatActivity {
                 }
             } );
 
-            chatAppRecyclerViewAdapter = new ChatAppRecyclerViewAdapter( content );
-            chatAppRecyclerView.setAdapter( chatAppRecyclerViewAdapter );
         } else{
             Toast.makeText(this, "You don't have Internet connection!", Toast.LENGTH_LONG).show();
         }
