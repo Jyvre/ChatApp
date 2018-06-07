@@ -8,4 +8,6 @@
     <string name="username">username</string>
     <string name="message">message</string>
     <string name="enviar">Enviar</string>
+    <string name="errorUser">Usuario vacío</string>
+    <string name="errorMsg">Mensaje vacío</string>
 </resources>
