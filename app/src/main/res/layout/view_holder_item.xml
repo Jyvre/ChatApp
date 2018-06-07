@@ -5,15 +5,18 @@
 
     <TextView
         android:id="@+id/userTextViewHolder"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorUserTag"
-        android:textSize="@string/userdpText"/>
+        android:textSize="@string/userdpText"
+        android:layout_top="true"/>
 
     <TextView
         android:id="@+id/msgTextViewHolder"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/userTextViewHolder"
         android:textColor="@color/colorMsgTag" />
 
 </RelativeLayout>
