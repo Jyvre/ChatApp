@@ -8,8 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/colorUserTag"
-        android:textSize="@string/userdpText"
-        android:layout_top="true"/>
+        android:textSize="@string/userdpText"/>
 
     <TextView
         android:id="@+id/msgTextViewHolder"

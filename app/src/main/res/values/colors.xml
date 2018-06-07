@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorUserTag">#707070</color>
     <color name="colorMsgTag">#101010</color>
+    <color name="colorPureWhite">#FFFFFF</color>
 </resources>

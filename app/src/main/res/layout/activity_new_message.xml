@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Views.NewMessageActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarMSG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textANM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@string/ANMdpText"
+        android:textColor="@color/colorMsgTag"
+        android:text="@string/addNewMessage"
+        android:layout_below="@+id/toolbarMSG"
+        android:layout_marginBottom="@string/marginBottomANM"/>
+    <EditText
+        android:id="@+id/editTextUSR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textANM"
+        android:text="@string/username"
+        android:textColor="@color/colorUserTag"/>
+    <EditText
+        android:id="@+id/editTextMSG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonSend"
+        android:text="@string/message"
+        android:textColor="@color/colorUserTag"/>
+
+    <Button
+        android:id="@+id/buttonSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/enviar"
+        android:onClick="onClickEnviar"/>
+
+</RelativeLayout>

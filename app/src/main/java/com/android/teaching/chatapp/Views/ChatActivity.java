@@ -25,6 +25,7 @@ public class ChatActivity extends AppCompatActivity {
         setContentView( R.layout.activity_chat );
 
         toolbar = findViewById( R.id.mainToolbar );
+        toolbar.setTitleTextColor( getResources().getColor( R.color.colorPureWhite ) );
         setSupportActionBar( toolbar );
 
         chatAppRecyclerView = findViewById( R.id.recycler_view );

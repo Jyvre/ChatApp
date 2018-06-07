@@ -12,8 +12,12 @@
         <activity android:name=".Views.ChatActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Views.NewMessageActivity"
+            android:parentActivityName=".Views.ChatActivity">
         </activity>
     </application>
 

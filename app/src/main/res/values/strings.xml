@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">ChatApp</string>
+    <string name="anewmessage">A new message</string>
     <string name="userdpText">16dp</string>
+    <string name="marginBottomANM">5dp</string>
+    <string name="ANMdpText">24dp</string>
+    <string name="addNewMessage">Add new message</string>
+    <string name="username">username</string>
+    <string name="message">message</string>
+    <string name="enviar">Enviar</string>
 </resources>
