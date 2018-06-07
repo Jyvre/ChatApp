@@ -11,7 +11,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.android.teaching.chatapp.Models.MessageModel;
 import com.android.teaching.chatapp.R;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +30,7 @@ public class NewMessageActivity extends AppCompatActivity {
         setContentView( R.layout.activity_new_message );
 
         user = findViewById( R.id.editTextUSR );
-        message = findViewById( R.id.toolbarMSG );
+        message = findViewById( R.id.editTextMSG );
 
         toolbar = findViewById( R.id.toolbarMSG );
         toolbar.setTitle( getResources().getString( R.string.anewmessage ) );
