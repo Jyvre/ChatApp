@@ -17,5 +17,10 @@ public class ChatAppViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    public void bind(String user, String msg){
+        userTextView.setText( user );
+        msgTextView.setText( msg );
+    }
+
 
 }
