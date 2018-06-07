@@ -65,9 +65,8 @@ public class ChatActivity extends AppCompatActivity {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     int i = 0;
                     for(DataSnapshot msgSnapshot : dataSnapshot.getChildren()){
-                        MessageModel msg = dataSnapshot.child(  ).getValue(MessageModel.class);
+                        MessageModel msg = dataSnapshot.getValue(MessageModel.class);
                         content.put( i,msg );
-                        Log.d("Mensje",msg.getUsername()+msg.getText());
                         i++;
                     }
                     chatAppRecyclerViewAdapter = new ChatAppRecyclerViewAdapter( content );
