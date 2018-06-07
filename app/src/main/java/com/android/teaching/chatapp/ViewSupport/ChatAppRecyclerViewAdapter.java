@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.android.teaching.chatapp.Models.MessageModel;
 import com.android.teaching.chatapp.R;
 
 import java.util.LinkedHashMap;
 
 public class ChatAppRecyclerViewAdapter extends RecyclerView.Adapter {
 
-    private LinkedHashMap<Integer, String[]> dataSet;
+    private LinkedHashMap<Integer, MessageModel> dataSet;
 
     public ChatAppRecyclerViewAdapter(LinkedHashMap dataSet){
         this.dataSet = dataSet;
@@ -25,7 +26,7 @@ public class ChatAppRecyclerViewAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ChatAppViewHolder) holder).bind( dataSet.get( position )[0], dataSet.get( position )[1] );
+        ((ChatAppViewHolder) holder).bind( dataSet.get( position ));
     }
 
     @Override

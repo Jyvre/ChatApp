@@ -3,6 +3,8 @@ package com.android.teaching.chatapp.ViewSupport;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
+
+import com.android.teaching.chatapp.Models.MessageModel;
 import com.android.teaching.chatapp.R;
 
 public class ChatAppViewHolder extends RecyclerView.ViewHolder {
@@ -17,9 +19,9 @@ public class ChatAppViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    public void bind(String user, String msg){
-        userTextView.setText( user );
-        msgTextView.setText( msg );
+    public void bind(MessageModel message){
+        userTextView.setText( message.getUsername() );
+        msgTextView.setText( message.getText() );
     }
 
 
